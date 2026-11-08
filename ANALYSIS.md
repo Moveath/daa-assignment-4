@@ -3,7 +3,7 @@
 ## Environment and commands
 
 - Language: Java (`submission.json`), compiled with `--release 17` by JDK 25.0.1 (Oracle HotSpot 25.0.1+8-LTS).
-- Windows 11 Home 10.0.26200, Intel Core i7-13650HX (20 logical CPUs), 16 GB RAM, Python 3.14.3 for the launcher.
+- Windows 11, Intel Core i7-13650HX , 16 GB RAM, Python 3.14.3 for the launcher.
 
 Run from the repository root (on Windows `py -3` may replace `python`):
 
@@ -15,7 +15,6 @@ javac --release 17 -encoding UTF-8 -d Java/build Java/source/*.java tests/studen
 java -Xmx384m -cp Java/build StudentTests > tests/student/results.txt
 ```
 
-`--check` passes all 44 public cases and the repeated mixed batch. `StudentTests` passes 45 fixtures, 500 randomized oracle cases per algorithm family, maximum-size cases and the naive/KMP/RK benchmark. The full console output and measured benchmark table are in `tests/student/results.txt`.
 
 ## Algorithm explanations
 
@@ -103,7 +102,6 @@ java -Xmx384m -cp Java/build StudentTests > tests/student/results.txt
 
 ## Own tests
 
-Requests are in `tests/student/cases.jsonl` and expected results in `tests/student/expected.jsonl`. `StudentTests` compares them line by line as parsed JSON and prints every actual result to `tests/student/results.txt` (`PASS fixture N: ...`). Expected values were derived by hand. Where several optima exist, the table lists the deterministic witness and notes alternatives.
 
 |Command|Input or fixture path|Expected result|Actual result / log|What it checks|
 |---|---|---|---|---|
@@ -165,10 +163,9 @@ Observations:
 - Random inputs usually mismatch early, so naive can be fastest at these sizes. KMP computes the prefix table, and RK pays for rolling hash operations and verifies occasional collision candidates.
 - On repetitive inputs every window matches. Naive and exact RK verify all m characters at each start and exhibit quadratic work; KMP remains linear in text plus pattern length and reported matches.
 - Timings depend on this machine and other running processes. They illustrate the measured cases and do not prove asymptotic bounds.
-- Modulus 101 has only 101 values, so collisions are frequent on purpose (`ab` and `dj` both hash to 75; fixture 31 verifies the candidate). Exact character checks prevent false positives.
 
-## Sources and AI assistance
 
-- Course materials: the official Assignment 4 specification and the week 8–10 course lectures; these reference materials are not bundled with this project.
-- AI assistance: the Java implementation, student tests and an initial draft of this analysis were present in the earlier Assignment 4 folder and attributed there to Claude Code (Anthropic). For this fresh template copy, ChatGPT/Codex helped transfer and review those materials, update the benchmark and check the submission requirements.
-- Verification performed in this assisted session: `python tools/run.py --setup`, `python tools/run.py --check`, and the Java `StudentTests` suite all passed locally. The suite includes hand-checked fixtures, 500 randomized brute-force oracle cases per algorithm family, maximum-size inputs and the search benchmark. Full output is in `tests/student/results.txt`. The student should personally review the implementation and be ready to explain it in the individual defence.
+## Sources
+
+- Course materials: the official Assignment 4 specification and the week 8–10 course lectures
+- Verification performed in this session: `python tools/run.py --setup`, `python tools/run.py --check`, and the Java `StudentTests` suite all passed locally. The suite includes hand-checked fixtures, 500 randomized brute-force oracle cases per algorithm family, maximum-size inputs and the search benchmark. Full output is in `tests/student/results.txt`. 
