@@ -1,0 +1,45 @@
+{"task":"lcs","a":"","b":"abc"}
+{"task":"lcs","a":"","b":""}
+{"task":"lcs","a":"axbycz","b":"abc"}
+{"task":"lcs","a":"aaaa","b":"aa"}
+{"task":"lcs","a":"ab","b":"ba"}
+{"task":"merge","sizes":[5]}
+{"task":"merge","sizes":[0,0,0]}
+{"task":"merge","sizes":[1,1,1,1]}
+{"task":"merge","sizes":[10,1,10,1]}
+{"task":"tree","n":1,"weights":[-5],"edges":[]}
+{"task":"tree","n":1,"weights":[7],"edges":[]}
+{"task":"tree","n":3,"weights":[-1,-2,-3],"edges":[[0,1],[1,2]]}
+{"task":"tree","n":2,"weights":[5,5],"edges":[[0,1]]}
+{"task":"tree","n":4,"weights":[10,4,4,4],"edges":[[0,1],[0,2],[0,3]]}
+{"task":"tree","n":4,"weights":[2,0,0,2],"edges":[[1,0],[2,1],[3,2]]}
+{"task":"naive","text":"abc","pattern":""}
+{"task":"naive","text":"","pattern":"a"}
+{"task":"naive","text":"A a, a!","pattern":"a"}
+{"task":"naive","text":"aaaa","pattern":"aa"}
+{"task":"naive","text":"abcab","pattern":"abcab"}
+{"task":"kmp","text":"abc","pattern":""}
+{"task":"kmp","text":"","pattern":"a"}
+{"task":"kmp","text":"A a, a!","pattern":"a"}
+{"task":"kmp","text":"aaaa","pattern":"aa"}
+{"task":"kmp","text":"abcab","pattern":"abcab"}
+{"task":"rk","text":"abc","pattern":""}
+{"task":"rk","text":"","pattern":"a"}
+{"task":"rk","text":"A a, a!","pattern":"a"}
+{"task":"rk","text":"aaaa","pattern":"aa"}
+{"task":"rk","text":"abcab","pattern":"abcab"}
+{"task":"rk","text":"abdjab","pattern":"ab"}
+{"task":"rk","text":"djdj","pattern":"ab"}
+{"task":"suffix","text":"aaaa"}
+{"task":"suffix","text":"abcd"}
+{"task":"suffix","text":"abab"}
+{"task":"suffix","text":"a a"}
+{"task":"suffix","text":"mississippi"}
+{"task":"suffix","text":"aabb"}
+{"task":"aho","patterns":[],"texts":["abc",""]}
+{"task":"aho","patterns":["a"],"texts":[]}
+{"task":"aho","patterns":["a","aa","aaa","a"],"texts":["aaaa","","baab"]}
+{"task":"aho","patterns":["He","he"," ","!"],"texts":["He said: he!"]}
+{"task":"aho","patterns":["abcd","bc","c"],"texts":["abcabcd"]}
+{"task":"aho","patterns":["ab"],"texts":["abab","abab"]}
+{"task":"aho","patterns":["a","aa","aaa","a"],"texts":["aaaa","","baab"]}

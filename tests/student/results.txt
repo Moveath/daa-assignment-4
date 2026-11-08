@@ -1,0 +1,101 @@
+PASS fixture files have 45 requests
+PASS fixture 1: {"length":0,"sequence":""}
+PASS fixture 2: {"length":0,"sequence":""}
+PASS fixture 3: {"length":3,"sequence":"abc"}
+PASS fixture 4: {"length":2,"sequence":"aa"}
+PASS fixture 5: {"length":1,"sequence":"a"}
+PASS fixture 6: {"plan":[],"cost":0}
+PASS fixture 7: {"plan":[[1,1,2],[0,0,2]],"cost":0}
+PASS fixture 8: {"plan":[[0,0,1],[2,2,3],[0,1,3]],"cost":8}
+PASS fixture 9: {"plan":[[0,0,1],[2,2,3],[0,1,3]],"cost":44}
+PASS fixture 10: {"selected":[],"weight":0}
+PASS fixture 11: {"selected":[0],"weight":7}
+PASS fixture 12: {"selected":[],"weight":0}
+PASS fixture 13: {"selected":[1],"weight":5}
+PASS fixture 14: {"selected":[3,2,1],"weight":12}
+PASS fixture 15: {"selected":[0,3],"weight":4}
+PASS fixture 16: {"positions":[0,1,2,3]}
+PASS fixture 17: {"positions":[]}
+PASS fixture 18: {"positions":[2,5]}
+PASS fixture 19: {"positions":[0,1,2]}
+PASS fixture 20: {"positions":[0]}
+PASS fixture 21: {"positions":[0,1,2,3]}
+PASS fixture 22: {"positions":[]}
+PASS fixture 23: {"positions":[2,5]}
+PASS fixture 24: {"positions":[0,1,2]}
+PASS fixture 25: {"positions":[0]}
+PASS fixture 26: {"positions":[0,1,2,3]}
+PASS fixture 27: {"positions":[]}
+PASS fixture 28: {"positions":[2,5]}
+PASS fixture 29: {"positions":[0,1,2]}
+PASS fixture 30: {"positions":[0]}
+PASS fixture 31: {"positions":[0,4]}
+PASS fixture 32: {"positions":[]}
+PASS fixture 33: {"repeated":"aaa","sa":[3,2,1,0],"lcp":[0,1,2,3]}
+PASS fixture 34: {"repeated":"","sa":[0,1,2,3],"lcp":[0,0,0,0]}
+PASS fixture 35: {"repeated":"ab","sa":[2,0,3,1],"lcp":[0,2,0,1]}
+PASS fixture 36: {"repeated":"a","sa":[1,2,0],"lcp":[0,0,1]}
+PASS fixture 37: {"repeated":"issi","sa":[10,7,4,1,0,9,8,6,3,5,2],"lcp":[0,1,1,4,0,0,1,0,2,1,3]}
+PASS fixture 38: {"repeated":"a","sa":[0,1,3,2],"lcp":[0,1,0,1]}
+PASS fixture 39: {"counts":[[],[]]}
+PASS fixture 40: {"counts":[]}
+PASS fixture 41: {"counts":[[4,3,2,4],[0,0,0,0],[2,1,0,2]]}
+PASS fixture 42: {"counts":[[1,1,2,1]]}
+PASS fixture 43: {"counts":[[1,2,2]]}
+PASS fixture 44: {"counts":[[2],[2]]}
+PASS fixture 45: {"counts":[[4,3,2,4],[0,0,0,0],[2,1,0,2]]}
+PASS oracle lcs: 500 random cases vs subset enumeration, witness is a common subsequence
+PASS oracle merge: 500 random cases vs all adjacent merge orders, plan replayed
+PASS oracle tree: 500 random trees vs all subsets, selected set independent
+PASS oracle naive/kmp/rk: 500 random pairs vs startsWith at every boundary
+PASS oracle suffix: 500 random texts vs sorted substrings and direct LCP
+PASS oracle aho: 500 random dictionaries vs counting every start
+PASS scale lcs 1000x1000 identical strings (16 ms)
+PASS scale merge 200 blocks of 1e9, expected 1544000000000 (5 ms)
+PASS scale tree chain of 100000 vertices of 1e9, expected 5e13 (53 ms)
+PASS scale kmp a^200000 / a^100000, 100001 starts (22 ms)
+PASS scale rk a^10000 / a^2000, every window is a candidate (34 ms)
+PASS scale suffix a^50000 (34 ms)
+PASS scale suffix random 50000 over ab, adjacent order and LCP verified (99 ms)
+PASS scale aho dense: a^1..a^446 in 100 texts a^2000 (18 ms)
+PASS scale aho wide: 10000 patterns of length 10, 100 texts of 2000 (165 ms)
+PASS bench output random n=1000 naive
+PASS bench output random n=1000 kmp
+PASS bench output random n=1000 rk
+PASS bench output random n=2000 naive
+PASS bench output random n=2000 kmp
+PASS bench output random n=2000 rk
+PASS bench output random n=3000 naive
+PASS bench output random n=3000 kmp
+PASS bench output random n=3000 rk
+PASS bench output repetitive n=1000 naive
+PASS bench output repetitive n=1000 kmp
+PASS bench output repetitive n=1000 rk
+PASS bench output repetitive n=2000 naive
+PASS bench output repetitive n=2000 kmp
+PASS bench output repetitive n=2000 rk
+PASS bench output repetitive n=3000 naive
+PASS bench output repetitive n=3000 kmp
+PASS bench output repetitive n=3000 rk
+
+| Case | n | m | Seed/generator | Algorithm | Run 1 | Run 2 | Run 3 | Median | Correct outputs checked |
+|---|---:|---:|---|---|---:|---:|---:|---:|---|
+| random | 1000 | 100 | Random(1000), abcd, window of text | naive | 4.9 us | 5.1 us | 5.4 us | 5.1 us | yes, z=1 |
+| random | 1000 | 100 | Random(1000), abcd, window of text | kmp | 6.0 us | 5.2 us | 5.9 us | 5.9 us | yes, z=1 |
+| random | 1000 | 100 | Random(1000), abcd, window of text | rk | 22.9 us | 22.8 us | 22.6 us | 22.8 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | naive | 10.8 us | 11.2 us | 11.8 us | 11.2 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | kmp | 12.9 us | 13.2 us | 12.9 us | 12.9 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | rk | 42.6 us | 48.1 us | 65.6 us | 48.1 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | naive | 17.1 us | 16.8 us | 16.8 us | 16.8 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | kmp | 20.5 us | 20.5 us | 24.7 us | 20.5 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | rk | 97.4 us | 89.4 us | 80.1 us | 89.4 us | yes, z=1 |
+| repetitive | 1000 | 100 | a^n, a^m | naive | 326.2 us | 324.0 us | 324.5 us | 324.5 us | yes, z=901 |
+| repetitive | 1000 | 100 | a^n, a^m | kmp | 23.9 us | 19.0 us | 18.8 us | 19.0 us | yes, z=901 |
+| repetitive | 1000 | 100 | a^n, a^m | rk | 491.5 us | 490.1 us | 477.1 us | 490.1 us | yes, z=901 |
+| repetitive | 2000 | 200 | a^n, a^m | naive | 1321.4 us | 2063.4 us | 6050.8 us | 2063.4 us | yes, z=1801 |
+| repetitive | 2000 | 200 | a^n, a^m | kmp | 61.6 us | 60.5 us | 50.1 us | 60.5 us | yes, z=1801 |
+| repetitive | 2000 | 200 | a^n, a^m | rk | 1967.5 us | 1895.2 us | 1849.3 us | 1895.2 us | yes, z=1801 |
+| repetitive | 3000 | 300 | a^n, a^m | naive | 2846.9 us | 5997.8 us | 2776.6 us | 2846.9 us | yes, z=2701 |
+| repetitive | 3000 | 300 | a^n, a^m | kmp | 38.2 us | 37.9 us | 37.8 us | 37.9 us | yes, z=2701 |
+| repetitive | 3000 | 300 | a^n, a^m | rk | 4792.6 us | 3993.3 us | 3904.8 us | 3993.3 us | yes, z=2701 |
+ALL PASSED
