@@ -63,8 +63,7 @@ def execute(command, requests):
     for answer in answers:
         if not isinstance(answer, dict):
             raise ValueError('each result must be a JSON object')
-        # Required result fields determine validity in public_validate.check.
-        # Extra JSON fields are ignored, including a field named "error".
+        
     return answers
 
 def run_cases(command, cases, label):
@@ -113,7 +112,7 @@ def main():
         cases = json.loads((P / 'tests' / 'public.json').read_text(encoding='utf-8'))
         failures = sum(run_cases(command, [case], f'public {index}: {case.get("name", case["input"]["task"])}')
                        for index, case in enumerate(cases, 1))
-        # Check independence of results in a persistent process, including repeated requests.
+        
         failures += run_cases(command, cases + cases, 'state reset: two complete batches in one process')
         return int(bool(failures))
     except subprocess.TimeoutExpired:
