@@ -141,24 +141,24 @@ Requests are in `tests/student/cases.jsonl` and expected results in `tests/stude
 
 | Case | n | m | Seed/generator | Algorithm | Run 1 | Run 2 | Run 3 | Median | Correct outputs checked |
 |---|---:|---:|---|---|---:|---:|---:|---:|---|
-| random | 1000 | 100 | Random(1000), abcd, window of text | naive | 4.9 us | 5.1 us | 5.4 us | 5.1 us | yes, z=1 |
-| random | 1000 | 100 | Random(1000), abcd, window of text | kmp | 6.0 us | 5.2 us | 5.9 us | 5.9 us | yes, z=1 |
-| random | 1000 | 100 | Random(1000), abcd, window of text | rk | 22.9 us | 22.8 us | 22.6 us | 22.8 us | yes, z=1 |
-| random | 2000 | 200 | Random(2000), abcd, window of text | naive | 10.8 us | 11.2 us | 11.8 us | 11.2 us | yes, z=1 |
-| random | 2000 | 200 | Random(2000), abcd, window of text | kmp | 12.9 us | 13.2 us | 12.9 us | 12.9 us | yes, z=1 |
-| random | 2000 | 200 | Random(2000), abcd, window of text | rk | 42.6 us | 48.1 us | 65.6 us | 48.1 us | yes, z=1 |
-| random | 3000 | 300 | Random(3000), abcd, window of text | naive | 17.1 us | 16.8 us | 16.8 us | 16.8 us | yes, z=1 |
-| random | 3000 | 300 | Random(3000), abcd, window of text | kmp | 20.5 us | 20.5 us | 24.7 us | 20.5 us | yes, z=1 |
-| random | 3000 | 300 | Random(3000), abcd, window of text | rk | 97.4 us | 89.4 us | 80.1 us | 89.4 us | yes, z=1 |
-| repetitive | 1000 | 100 | a^n, a^m | naive | 326.2 us | 324.0 us | 324.5 us | 324.5 us | yes, z=901 |
-| repetitive | 1000 | 100 | a^n, a^m | kmp | 23.9 us | 19.0 us | 18.8 us | 19.0 us | yes, z=901 |
-| repetitive | 1000 | 100 | a^n, a^m | rk | 491.5 us | 490.1 us | 477.1 us | 490.1 us | yes, z=901 |
-| repetitive | 2000 | 200 | a^n, a^m | naive | 1321.4 us | 2063.4 us | 6050.8 us | 2063.4 us | yes, z=1801 |
-| repetitive | 2000 | 200 | a^n, a^m | kmp | 61.6 us | 60.5 us | 50.1 us | 60.5 us | yes, z=1801 |
-| repetitive | 2000 | 200 | a^n, a^m | rk | 1967.5 us | 1895.2 us | 1849.3 us | 1895.2 us | yes, z=1801 |
-| repetitive | 3000 | 300 | a^n, a^m | naive | 2846.9 us | 5997.8 us | 2776.6 us | 2846.9 us | yes, z=2701 |
-| repetitive | 3000 | 300 | a^n, a^m | kmp | 38.2 us | 37.9 us | 37.8 us | 37.9 us | yes, z=2701 |
-| repetitive | 3000 | 300 | a^n, a^m | rk | 4792.6 us | 3993.3 us | 3904.8 us | 3993.3 us | yes, z=2701 |
+| random | 1000 | 100 | Random(1000), abcd, window of text | naive | 2.6 us | 2.2 us | 2.1 us | 2.2 us | yes, z=1 |
+| random | 1000 | 100 | Random(1000), abcd, window of text | kmp | 3.7 us | 3.0 us | 3.3 us | 3.3 us | yes, z=1 |
+| random | 1000 | 100 | Random(1000), abcd, window of text | rk | 12.9 us | 12.7 us | 12.6 us | 12.7 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | naive | 4.6 us | 4.8 us | 4.5 us | 4.6 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | kmp | 6.2 us | 6.1 us | 6.1 us | 6.1 us | yes, z=1 |
+| random | 2000 | 200 | Random(2000), abcd, window of text | rk | 26.5 us | 25.6 us | 27.4 us | 26.5 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | naive | 6.8 us | 6.9 us | 6.2 us | 6.8 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | kmp | 9.3 us | 9.2 us | 9.2 us | 9.2 us | yes, z=1 |
+| random | 3000 | 300 | Random(3000), abcd, window of text | rk | 39.0 us | 37.3 us | 38.2 us | 38.2 us | yes, z=1 |
+| repetitive | 1000 | 100 | a^n, a^m | naive | 132.0 us | 131.0 us | 130.8 us | 131.0 us | yes, z=901 |
+| repetitive | 1000 | 100 | a^n, a^m | kmp | 10.9 us | 6.4 us | 6.5 us | 6.5 us | yes, z=901 |
+| repetitive | 1000 | 100 | a^n, a^m | rk | 215.9 us | 215.5 us | 214.4 us | 215.5 us | yes, z=901 |
+| repetitive | 2000 | 200 | a^n, a^m | naive | 494.5 us | 490.8 us | 506.8 us | 494.5 us | yes, z=1801 |
+| repetitive | 2000 | 200 | a^n, a^m | kmp | 12.7 us | 12.4 us | 12.4 us | 12.4 us | yes, z=1801 |
+| repetitive | 2000 | 200 | a^n, a^m | rk | 817.7 us | 821.1 us | 806.8 us | 817.7 us | yes, z=1801 |
+| repetitive | 3000 | 300 | a^n, a^m | naive | 1088.2 us | 1082.2 us | 1090.0 us | 1088.2 us | yes, z=2701 |
+| repetitive | 3000 | 300 | a^n, a^m | kmp | 18.4 us | 18.7 us | 18.9 us | 18.7 us | yes, z=2701 |
+| repetitive | 3000 | 300 | a^n, a^m | rk | 1779.2 us | 1764.5 us | 1762.4 us | 1764.5 us | yes, z=2701 |
 
 Observations:
 
@@ -169,6 +169,6 @@ Observations:
 
 ## Sources and AI assistance
 
-- Course materials: the assignment specification, `docs/LECTURE_CLARIFICATIONS_EN_RU.md` and the week 8–10 lectures.
+- Course materials: the official Assignment 4 specification and the week 8–10 course lectures; these reference materials are not bundled with this project.
 - AI assistance: the Java implementation, student tests and an initial draft of this analysis were present in the earlier Assignment 4 folder and attributed there to Claude Code (Anthropic). For this fresh template copy, ChatGPT/Codex helped transfer and review those materials, update the benchmark and check the submission requirements.
 - Verification performed in this assisted session: `python tools/run.py --setup`, `python tools/run.py --check`, and the Java `StudentTests` suite all passed locally. The suite includes hand-checked fixtures, 500 randomized brute-force oracle cases per algorithm family, maximum-size inputs and the search benchmark. Full output is in `tests/student/results.txt`. The student should personally review the implementation and be ready to explain it in the individual defence.
