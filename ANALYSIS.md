@@ -2,7 +2,7 @@
 
 ## Environment and commands
 
-- Language: Java (`submission.json`), compiled with `--release 17` by JDK 25.0.1 (Oracle HotSpot 25.0.1+8-LTS).
+- Language: Java (`submission.json`), compiled with `--release 17` by JDK 25
 - Windows 11, Intel Core i7-13650HX , 16 GB RAM, Python 3.14.3 for the launcher.
 
 Run from the repository root (on Windows `py -3` may replace `python`):
